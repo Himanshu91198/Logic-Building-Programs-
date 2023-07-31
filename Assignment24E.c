@@ -1,0 +1,41 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Write a program which accept string from user reverse that string in place.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+int StrRevX(char *str)
+{   
+    char *end = str;
+    char temp = '\0';
+
+    while(*end != 0)
+    {
+        end++;
+    }
+    end--;
+
+    while(str < end)
+    {
+        temp = *str;
+        *str = *end;
+        *end = temp;
+
+        str++;
+        end--;
+    }
+}
+
+int main()
+{
+    char Arr[20];
+
+    printf("Enter String: ");
+    scanf("%[^'\n']s",Arr);
+    
+    StrRevX(Arr);
+    
+    printf("Modified String is: %s",Arr);
+
+    return 0;
+}

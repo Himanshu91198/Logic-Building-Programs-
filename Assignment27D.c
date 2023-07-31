@@ -1,0 +1,33 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Write a program which accept one number from user and toggle 7th and 10th bit of that number. Return modified number.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+typedef unsigned int UINT;
+
+UINT ToggleBit(UINT iNo)
+{
+    UINT iMask1 = 0X00000040;
+    UINT iMask2 = 0X00000200;
+    UINT iResult = 0;
+
+    iResult = iNo ^ (iMask1 | iMask2);
+    return iResult;
+}
+
+int main()
+{
+    UINT iValue = 0;
+    UINT iRet = 0;
+
+    printf("Enter number: ");
+    scanf("%d",&iValue);
+
+    iRet = ToggleBit(iValue);
+
+    printf("%d",iRet);
+    
+    return 0;
+
+}
